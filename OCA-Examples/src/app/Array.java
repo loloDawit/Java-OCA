@@ -16,6 +16,10 @@ class Array {
         System.out.println();
     }
 
+    public int size() {
+        return array.length;
+    }
+
     // insert array elements
     public boolean insert(int value) {
         array[nElements] = value;
@@ -35,6 +39,28 @@ class Array {
             }
         }
         display();
+    }
+
+    // Binary search
+    public int find(int key) {
+        int lowerBound = 0;
+        int upperBound = nElements - 1;
+
+        int currentIndex;
+        while (true) {
+            currentIndex = (lowerBound + upperBound) / 2; // set curinx to the middle
+            if (array[currentIndex] == key) {
+                return currentIndex; // found it
+            } else if (lowerBound > upperBound) {
+                return nElements; // cant find
+            } else {
+                if (array[currentIndex] < key) {
+                    lowerBound = currentIndex + 1; // it;s in the upper half
+                } else {
+                    upperBound = currentIndex - 1;
+                }
+            }
+        }
     }
 
 }
