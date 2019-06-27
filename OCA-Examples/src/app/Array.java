@@ -41,6 +41,27 @@ class Array {
         display();
     }
 
+    // selection sort
+    public void sSort() {
+        int i;
+        for (i = 0; i < nElements - 1; i++) {
+            int min = i; // minimum
+            for (int j = i + 1; j < nElements; j++) {
+                if (array[j] < array[min]) {
+                    min = j;
+                }
+            }
+            swap(i, min);
+        }
+        display();
+    }
+
+    private void swap(int a, int b) {
+        int temp = array[a];
+        array[a] = array[b];
+        array[b] = temp;
+    }
+
     // Binary search
     public int find(int key) {
         int lowerBound = 0;

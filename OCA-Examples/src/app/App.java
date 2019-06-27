@@ -8,7 +8,7 @@ public class App {
         array.insert(4);
         array.insert(21);
         array.display();
-        array.bSort();
+        array.sSort();
         int key = 21;
         if (array.find(key) != array.size()) {
             System.out.println("Found " + key);
@@ -18,6 +18,8 @@ public class App {
         ArrayPerson person = new ArrayPerson(100);
         person.insert("Dawit", "Abera", 21);
         person.insert("Henok", "Girma", 30);
+        person.insert("Sidy", "Xo", 30);
+        person.insert("Kyle", "Lever", 45);
         person.display();
         String search = "Henok";
         Person found;
@@ -28,6 +30,9 @@ public class App {
         } else {
             System.out.println("Can't find " + search);
         }
+        String skey = "Sidy";
+        person.delete(skey);
+        person.display();
 
     }
 }

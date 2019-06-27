@@ -36,4 +36,22 @@ class ArrayPerson {
         }
     }
 
+    public boolean delete(String searchName) {
+        int i;
+        for (i = 0; i < nElements; i++) {
+            if (array[i].getLastName().equals(searchName)) {
+                break;
+            }
+        }
+        if (i == nElements) {
+            return false;
+        } else {
+            for (int k = i; k < nElements - 1; k++) {
+                array[k] = array[k + 1];
+                nElements--;
+            }
+        }
+        return true;
+    }
+
 }
